@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HomeFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonProximidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Proximidade"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/buttonAcelerometro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Acelerômetro"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/buttonLuz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Luz"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/buttonGiroscopio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Giroscópio"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+
+    </FrameLayout>
+</layout>
