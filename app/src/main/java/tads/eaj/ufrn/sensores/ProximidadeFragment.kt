@@ -6,7 +6,6 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,29 +15,35 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.DataBindingUtil
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
 import tads.eaj.ufrn.sensores.databinding.FragmentLuzBinding
+import tads.eaj.ufrn.sensores.databinding.FragmentProximidadeBinding
+import kotlin.math.absoluteValue
 
-class LuzFragment : Fragment(), SensorEventListener {
+class ProximidadeFragment : Fragment(), SensorEventListener {
 
-    lateinit var binding: FragmentLuzBinding
+    lateinit var binding: FragmentProximidadeBinding
     private lateinit var sensorManager: SensorManager
-    private var luz: Sensor? = null
+    private var proximidade: Sensor? = null
     private lateinit var text: TextView
 
-    override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle? ): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_luz, container, false)
-        sensorManager = activity!!.getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_proximidade, container, false)
 
         text = binding.tvText
-        luz = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
+        sensorManager = activity!!.getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        proximidade = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY)
 
         return binding.root
     }
 
     override fun onSensorChanged(event: SensorEvent?) {
-        if (event?.sensor?.type == Sensor.TYPE_LIGHT) {
-            val luz1 = event.values[0]
-            text.text = "Sensor: ${luz1}"
+        if (event?.sensor?.type == Sensor.TYPE_PROXIMITY) {
+            val proximidade1 = event.values[0]
+            text.text = "Sensor: ${proximidade1}"
         }
     }
 
@@ -48,7 +53,6 @@ class LuzFragment : Fragment(), SensorEventListener {
 
     override fun onResume() {
         super.onResume()
-        sensorManager.registerListener(this, luz, SensorManager.SENSOR_DELAY_NORMAL)
+        sensorManager.registerListener(this, proximidade, SensorManager.SENSOR_DELAY_NORMAL)
     }
-
 }

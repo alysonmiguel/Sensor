@@ -13,6 +13,15 @@
         <action
             android:id="@+id/action_homeFragment_to_Luz"
             app:destination="@id/Luz" />
+        <action
+            android:id="@+id/action_homeFragment_to_acelerometroFragment"
+            app:destination="@id/acelerometroFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_proximidadeFragment"
+            app:destination="@id/proximidadeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_giroscopioFragment"
+            app:destination="@id/giroscopioFragment" />
     </fragment>
     <fragment
         android:id="@+id/Luz"
@@ -21,6 +30,30 @@
         tools:layout="@layout/fragment_luz">
         <action
             android:id="@+id/action_Luz_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/acelerometroFragment"
+        android:name="tads.eaj.ufrn.sensores.AcelerometroFragment"
+        android:label="AcelerometroFragment" >
+        <action
+            android:id="@+id/action_acelerometroFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/giroscopioFragment"
+        android:name="tads.eaj.ufrn.sensores.GiroscopioFragment"
+        android:label="GiroscopioFragment" >
+        <action
+            android:id="@+id/action_giroscopioFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/proximidadeFragment"
+        android:name="tads.eaj.ufrn.sensores.ProximidadeFragment"
+        android:label="ProximidadeFragment" >
+        <action
+            android:id="@+id/action_proximidadeFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

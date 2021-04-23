@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Sensores</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="SensorLuz">Sensor de luminosidade</string>
+    <string name="SensorProximidade">Sensor de proximidade</string>
+    <string name="SensorAcelerometro">Sensor de acelerômetro</string>
+    <string name="SensorGiroscopio">Sensor de giroscópio</string>
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
